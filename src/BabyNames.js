@@ -1,7 +1,14 @@
-import babyNamesData from "./babyNamesData.json";
-
-const BabyNames = () => {
-  const babyNames = babyNamesData;
+const BabyNames = (props) => {
+  const babyNames = props.names;
+  babyNames.sort((a, b) => {
+    if (a.name > b.name) {
+      return 1;
+    } else if (a.name < b.name) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
 
   return (
     <div>
@@ -12,7 +19,7 @@ const BabyNames = () => {
               {item.name}
             </button>
           );
-        } else if (item.sex === "m") {
+        } else {
           return (
             <button className="m-button" key={item.id}>
               {item.name}
@@ -20,6 +27,7 @@ const BabyNames = () => {
           );
         }
       })}
+      ;
     </div>
   );
 };
