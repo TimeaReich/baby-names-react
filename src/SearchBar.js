@@ -1,22 +1,20 @@
-import React, { useState } from "react";
-import BabyNames from "./BabyNames";
+import React from "react";
 
 const SearchBar = (props) => {
-  const [filteredNames, setFilteredNames] = useState();
+  const filteredNames = props.filteredNames;
+  const setFilteredNames = props.setFilteredNames;
+  console.log(filteredNames);
   const filterNames = (e) => {
-    const searchWord = e.target.value.toUpperCase();
-    console.log(
-      props.names.filter((item) => item.name.toUpperCase().includes(searchWord))
-    );
-
-    const filter = props.names.filter((item) => {
-      return item.name.toUpperCase().includes(searchWord);
+    setFilteredNames(() => {
+      const searchWord = e.target.value.toUpperCase();
+      const filter = filteredNames.filter((item) => {
+        return item.name.toUpperCase().includes(searchWord);
+      });
+      console.log(filter);
+      return filter;
     });
-    console.log(filter);
-    BabyNames(filter);
   };
 
-  //  const babyNames = props.names;
   return (
     <div>
       <input
