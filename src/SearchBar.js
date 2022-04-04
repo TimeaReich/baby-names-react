@@ -1,16 +1,15 @@
 import React from "react";
 
 const SearchBar = (props) => {
-  const filteredNames = props.filteredNames;
   const setFilteredNames = props.setFilteredNames;
-  console.log(filteredNames);
+
   const filterNames = (e) => {
     setFilteredNames(() => {
       const searchWord = e.target.value.toUpperCase();
-      const filter = filteredNames.filter((item) => {
+
+      const filter = props.names.filter((item) => {
         return item.name.toUpperCase().includes(searchWord);
       });
-      console.log(filter);
       return filter;
     });
   };

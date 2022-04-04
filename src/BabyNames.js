@@ -1,6 +1,6 @@
 const BabyNames = (props) => {
   const babyNames = props.names;
-  const filteredNames=props.setFilteredNames
+  //const filteredNames=props.setFilteredNames
   babyNames.sort((a, b) => {
     if (a.name > b.name) {
       return 1;
