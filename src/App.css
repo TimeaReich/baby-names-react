@@ -58,8 +58,19 @@
   padding: 1rem;
   border: 0;
   width: 300px;
-  margin-bottom: 1rem;
 }
 .favourites {
   margin-bottom: 2rem;
+}
+.SearchBar-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.allnames-button {
+  background-color: rgb(202, 202, 202);
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
 }

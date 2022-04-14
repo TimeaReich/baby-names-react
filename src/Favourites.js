@@ -10,19 +10,17 @@ const Favourites = (props) => {
   return (
     <div className="favourites">
       <p>Favourites: </p>
-      {favname.length > 1
-        ? favname.map((item) => {
-            return item.sex === "f" ? (
-              <button className="f-button" key={item.id}>
-                {item.name}
-              </button>
-            ) : (
-              <button className="m-button" key={item.id}>
-                {item.name}
-              </button>
-            );
-          })
-        : ""}
+      {favname.map((item) => {
+        return item.sex === "f" ? (
+          <button key={item.id} className="f-button">
+            {item.name}
+          </button>
+        ) : (
+          <button key={item.id} className="m-button">
+            {item.name}
+          </button>
+        );
+      })}
     </div>
   );
 };
