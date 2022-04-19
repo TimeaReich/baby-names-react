@@ -1,8 +1,7 @@
 import React from "react";
 
 const BabyNames = (props) => {
-  console.log(props.names);
-  props.names.sort((a, b) => {
+  props.filteredNames.sort((a, b) => {
     if (a.name > b.name) {
       return 1;
     } else if (a.name < b.name) {
@@ -14,13 +13,14 @@ const BabyNames = (props) => {
 
   return (
     <div>
-      {props.names.map((item, index) => {
+      {props.filteredNames.map((item, index) => {
         if (item.sex === "f") {
           return (
             <button
               onClick={() => {
                 props.setSelectedButton(item);
-                props.setFilteredNames(props.names.splice(index, 1));
+                props.names.splice(index, 1);
+                props.setFilteredNames(props.names);
               }}
               className="f-button"
               key={item.id}
@@ -33,7 +33,8 @@ const BabyNames = (props) => {
             <button
               onClick={() => {
                 props.setSelectedButton(item);
-                props.setFilteredNames(props.names.splice(index, 1));
+                props.names.splice(index, 1);
+                props.setFilteredNames(props.names);
               }}
               className="m-button"
               key={item.id}

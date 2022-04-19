@@ -2,7 +2,7 @@ import "./App.css";
 import BabyNames from "./BabyNames";
 import SearchBar from "./SearchBar";
 import babyNamesData from "./babyNamesData.json";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Favourites from "./Favourites";
 import FemaleButton from "./FemaleButton";
 import MaleButton from "./MaleButton";
@@ -14,7 +14,7 @@ function App() {
   const [selectedButton, setSelectedButton] = useState([]);
 
   // console.log(filteredNames);
-  console.log(selectedButton);
+  // console.log(namesData);
   return (
     <div className="App">
       <header className="App-header">
@@ -37,6 +37,7 @@ function App() {
         <BabyNames
           setSelectedButton={setSelectedButton}
           names={namesData}
+          filteredNames={filteredNames}
           setFilteredNames={setFilteredNames}
         />
       </header>
