@@ -13,6 +13,7 @@ function App() {
   const [filteredNames, setFilteredNames] = useState(namesData);
   const [selectedButton, setSelectedButton] = useState([]);
 
+  // console.log(filteredNames);
   console.log(selectedButton);
   return (
     <div className="App">
@@ -35,7 +36,8 @@ function App() {
         <Favourites names={namesData} selectedButton={selectedButton} />
         <BabyNames
           setSelectedButton={setSelectedButton}
-          names={filteredNames}
+          names={namesData}
+          setFilteredNames={setFilteredNames}
         />
       </header>
     </div>
