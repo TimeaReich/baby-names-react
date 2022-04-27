@@ -2,7 +2,7 @@ import "./App.css";
 import BabyNames from "./BabyNames";
 import SearchBar from "./SearchBar";
 import babyNamesData from "./babyNamesData.json";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Favourites from "./Favourites";
 import FemaleButton from "./FemaleButton";
 import MaleButton from "./MaleButton";
