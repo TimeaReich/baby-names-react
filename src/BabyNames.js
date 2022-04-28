@@ -1,6 +1,14 @@
 import React from "react";
 
 const BabyNames = (props) => {
+  const onClickDelete = (item, index) => {
+    props.setSelectedButton(item);
+    const filteredBabyNames = props.filteredNames.filter(
+      (item, i) => i !== index
+    );
+    props.setFilteredNames(filteredBabyNames);
+  };
+
   props.filteredNames.sort((a, b) => {
     if (a.name > b.name) {
       return 1;
@@ -17,11 +25,7 @@ const BabyNames = (props) => {
         if (item.sex === "f") {
           return (
             <button
-              onClick={() => {
-                props.setSelectedButton(item);
-                props.names.splice(index, 1);
-                props.setFilteredNames(props.names);
-              }}
+              onClick={onClickDelete.bind(null, item, index)}
               className="f-button"
               key={item.id}
             >
@@ -31,11 +35,7 @@ const BabyNames = (props) => {
         } else {
           return (
             <button
-              onClick={() => {
-                props.setSelectedButton(item);
-                props.names.splice(index, 1);
-                props.setFilteredNames(props.names);
-              }}
+              onClick={onClickDelete.bind(null, item, index)}
               className="m-button"
               key={item.id}
             >

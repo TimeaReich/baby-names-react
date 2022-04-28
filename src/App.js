@@ -35,6 +35,7 @@ function App() {
         </div>
         <Favourites names={namesData} selectedButton={selectedButton} />
         <BabyNames
+          selectedButton={selectedButton}
           setSelectedButton={setSelectedButton}
           names={namesData}
           filteredNames={filteredNames}
